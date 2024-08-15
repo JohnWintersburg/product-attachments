@@ -1,0 +1,22 @@
+{
+    "name": "johnwintersburg/product-attachments",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Vladimirs Prokopovics",
+            "email": "vladimirs.prokopovics@gmail.com",
+            "role": "Developer",
+            "homepage": "https://www.linkedin.com/in/vladimirs-prokopovics-91b59922a/"
+        }
+    ],
+    "version": "1.0.0",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "JohnWintersburg\\ProductAttachments\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
