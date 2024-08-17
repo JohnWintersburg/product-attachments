@@ -4,5 +4,5 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Johnwintersburg_ProductAttachments',
+    'JohnWintersburg_ProductAttachments',
     __DIR__);
