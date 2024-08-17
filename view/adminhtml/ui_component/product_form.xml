@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:ui:form/etc/ui_form.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">product_form.product_form_data_source</item>
+            <item name="deps" xsi:type="string">product_form.product_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Product Form</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data.product</item>
+        </item>
+    </argument>
+    <dataSource name="product_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider</argument>
+            <argument name="name" xsi:type="string">product_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="mui/index/render"/>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <fieldset name="product_attachments">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Product Attachments</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">50</item>
+            </item>
+        </argument>
+        <field name="attachment_file">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Attachment File</item>
+                    <item name="dataType" xsi:type="string">file</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="source" xsi:type="string">product</item>
+                    <item name="dataScope" xsi:type="string">attachment_file</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </field>
+        <field name="attachment_label">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Attachment Label</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">product</item>
+                    <item name="dataScope" xsi:type="string">attachment_label</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>
