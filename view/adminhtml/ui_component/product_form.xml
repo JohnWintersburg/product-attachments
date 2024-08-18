@@ -24,7 +24,7 @@
         </argument>
     </dataSource>
     <fieldset name="product_attachments">
-        <argument name="data" xsi:type="array">
+       <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="label" xsi:type="string" translate="true">Product Attachments</item>
                 <item name="collapsible" xsi:type="boolean">true</item>
@@ -40,8 +40,15 @@
                     <item name="source" xsi:type="string">product</item>
                     <item name="dataScope" xsi:type="string">attachment_file</item>
                     <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="productattachments/attachment/upload"/>
+                    </item>
+                    <item name="component" xsi:type="string">JohnWintersburg_ProductAttachments/js/attachment-uploader</item>
                 </item>
             </argument>
+            <settings>
+                <elementTmpl>JohnWintersburg_ProductAttachments/attachment-uploader</elementTmpl>
+            </settings>
         </field>
         <field name="attachment_label">
             <argument name="data" xsi:type="array">
@@ -55,5 +62,14 @@
                 </item>
             </argument>
         </field>
+        <button name="submit_attachment">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="title" xsi:type="string" translate="true">Submit Attachment</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/form/components/button</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </button>
     </fieldset>
 </form>
